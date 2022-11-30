@@ -11,5 +11,6 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="docs" level="application" />
     <orderEntry type="library" name="264e88bd43" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
   </component>
 </module>
