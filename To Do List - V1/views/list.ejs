@@ -1,0 +1,30 @@
+<%- include("header"); -%>
+
+<h1 class="title"><%= day %></h1>
+
+<div class="list-group w-auto">
+    <% for (let i = 0; i < todos.length; i++) { %>
+    <label class="list-group-item d-flex gap-3">
+        <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+        <span class="pt-1 form-checked-content">
+            <strong><%=todos[i]%></strong>
+            <!--<small class="d-block text-muted">
+                <svg class="bi me-1" width="1em" height="1em"><use xlink:href="#calendar-event"></use></svg>
+                All day
+            </small>-->
+        </span>
+    </label>
+    <% } %>
+    <label class="list-group-item d-flex gap-3 bg-light">
+        <form class="row row-cols-lg-auto g-3 align-items-center" action="/" method="post">
+            <div class="col-12">
+                <input type="text" class="form-control" id="newToDo" name="newToDo" required>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit" name="submit">+</button>
+            </div>
+        </form>
+    </label>
+</div>
+
+<%- include("footer"); -%>
