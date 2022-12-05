@@ -1,0 +1,6 @@
+<%- include('partials/header'); -%>
+
+<h1><%=article.title%></h1>
+<p><%-article.body.replaceAll("\n", "<br>")%></p>
+
+<%- include('partials/footer'); -%>

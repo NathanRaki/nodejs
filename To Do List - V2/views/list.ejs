@@ -1,0 +1,29 @@
+<%- include("header"); -%>
+
+<h1 class="title"><%= listName %></h1>
+
+<div class="list-group w-auto">
+    <% tasks.forEach(task => { %>
+    <label class="list-group-item d-flex gap-3">
+        <form action="/delete" method="post">
+            <input class="form-check-input flex-shrink-0" name="completedCheck" value="<%= task._id %>"  type="checkbox" style="font-size: 1.375em;" onchange="this.form.submit()">
+            <input type="hidden" name="listUrl" value="<%= listUrl %>">
+        </form>
+        <span class="pt-1 form-checked-content">
+            <%-task.description%>
+        </span>
+    </label>
+    <% }); %>
+    <label class="list-group-item d-flex gap-3 bg-light">
+        <form class="row row-cols-lg-auto g-3 align-items-center" action="/" method="post">
+            <div class="col-12">
+                <input type="text" class="form-control" id="newTask" name="newTask" required>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit" name="list" value="<%=listUrl%>">+</button>
+            </div>
+        </form>
+    </label>
+</div>
+
+<%- include("footer"); -%>
