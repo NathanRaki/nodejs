@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 exports.connect = () => {
-    mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://raki:4079871724@cluster0.v1izjbg.mongodb.net/user",
+    mongoose.connect(process.env.MONGODB_URI,
         {
             useNewUrlParser: true,
             useUnifiedTopology: true,
